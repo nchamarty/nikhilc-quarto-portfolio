@@ -1,0 +1,165 @@
+---
+title: "Nikhil Chamarty"
+subtitle: "Data Scientist & Analytics Professional"
+author: "Nikhil Chamarty"
+date: today
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 2
+    css: styles.css
+    code-fold: true
+    code-tools: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+## About Me
+
+Welcome to my portfolio! I'm a passionate data scientist with expertise in analytics, machine learning, and data visualization.
+
+## Skills
+
+- **Programming Languages**: Python, R, SQL, JavaScript
+- **Data Science**: Machine Learning, Statistical Analysis, Data Visualization
+- **Tools**: Jupyter, Git, Docker, AWS
+- **Frameworks**: Pandas, NumPy, Scikit-learn, TensorFlow, PyTorch
+
+## Projects
+
+### Project 1: Example Analysis
+
+Here's a simple line chart showing sample data:
+
+```{python}
+#| label: fig-line-chart
+#| fig-cap: "Sample Line Chart"
+#| fig-width: 8
+#| fig-height: 5
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Generate sample data
+x = np.linspace(0, 10, 100)
+y = np.sin(x) + 0.1 * np.random.randn(100)
+
+# Create the plot
+plt.figure(figsize=(10, 6))
+plt.plot(x, y, 'b-', linewidth=2, label='Sample Data')
+plt.xlabel('X Values')
+plt.ylabel('Y Values')
+plt.title('Sample Line Chart')
+plt.grid(True, alpha=0.3)
+plt.legend()
+plt.tight_layout()
+plt.show()
+```
+
+### Project 2: Sample Data Analysis
+
+Here's a bar chart showing sample categorical data:
+
+```{python}
+#| label: fig-bar-chart
+#| fig-cap: "Sample Bar Chart"
+#| fig-width: 8
+#| fig-height: 5
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Sample data for categories
+categories = ['A', 'B', 'C', 'D', 'E']
+values = [23, 45, 56, 78, 32]
+colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7']
+
+# Create the bar chart
+plt.figure(figsize=(10, 6))
+bars = plt.bar(categories, values, color=colors, alpha=0.8, edgecolor='black', linewidth=1)
+
+# Add value labels on top of bars
+for bar, value in zip(bars, values):
+    plt.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 1, 
+             str(value), ha='center', va='bottom', fontweight='bold')
+
+plt.xlabel('Categories')
+plt.ylabel('Values')
+plt.title('Sample Bar Chart')
+plt.grid(True, alpha=0.3, axis='y')
+plt.tight_layout()
+plt.show()
+```
+
+### Project 3: Data Exploration with Scatter Plot
+
+Here's a scatter plot showing random data points with correlation:
+
+```{python}
+#| label: fig-scatter-plot
+#| fig-cap: "Sample Scatter Plot"
+#| fig-width: 8
+#| fig-height: 5
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Set random seed for reproducibility
+np.random.seed(42)
+
+# Generate correlated random data
+n_points = 100
+x = np.random.randn(n_points)
+y = 2 * x + np.random.randn(n_points) * 0.5  # y = 2x + noise
+
+# Create the scatter plot
+plt.figure(figsize=(10, 6))
+scatter = plt.scatter(x, y, c=np.random.randn(n_points), 
+                     cmap='viridis', alpha=0.7, s=60, edgecolors='black', linewidth=0.5)
+
+# Add colorbar
+plt.colorbar(scatter, label='Color Value')
+
+# Add trend line
+z = np.polyfit(x, y, 1)
+p = np.poly1d(z)
+plt.plot(x, p(x), "r--", alpha=0.8, linewidth=2, label=f'Trend line: y={z[0]:.2f}x+{z[1]:.2f}')
+
+plt.xlabel('X Values')
+plt.ylabel('Y Values')
+plt.title('Sample Scatter Plot with Correlation')
+plt.grid(True, alpha=0.3)
+plt.legend()
+plt.tight_layout()
+plt.show()
+```
+
+### Project 4: Machine Learning Model
+*Coming soon...*
+
+## Experience
+
+### Data Scientist | Company Name
+*Year - Present*
+
+- Led data analysis projects
+- Built predictive models
+- Collaborated with cross-functional teams
+
+## Education
+
+### Master's Degree in Data Science
+*University Name, Year*
+
+## Contact
+
+- **Email**: your.email@example.com
+- **LinkedIn**: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
+- **GitHub**: [github.com/yourusername](https://github.com/yourusername)
+
+---
+
+*Last updated: `r Sys.Date()`*
